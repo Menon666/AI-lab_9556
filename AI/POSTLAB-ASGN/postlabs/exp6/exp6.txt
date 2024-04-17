@@ -1,0 +1,25 @@
+Optimality:
+
+A*: A* is an optimal search algorithm, meaning it guarantees finding the shortest path from the start node to the goal node, given that the heuristic used is both admissible (never overestimates the actual cost) and consistent (satisfies the triangle inequality).
+AO*: AO* is not guaranteed to find the optimal solution. It uses an inadmissible heuristic (which can overestimate or be inconsistent), potentially leading to suboptimal paths being found.
+
+Heuristic Function:
+
+A*: A* requires a consistent and admissible heuristic to guide its search efficiently towards the goal. The choice of heuristic strongly influences the performance and optimality of A*.
+AO*: AO* allows for the use of inadmissible heuristics, providing more flexibility in heuristic selection. This can sometimes lead to faster exploration of the search space but sacrifices optimality.
+Node 
+
+Expansion:
+
+A*: A* expands nodes based on the evaluation function f(n) = g(n) + h(n), where g(n) is the cost of the path from the start node to node n, and h(n) is the estimated cost from node n to the goal. A* always chooses the node with the lowest f(n) value for expansion.
+AO*: AO* also uses f(n) = g(n) + h(n) but introduces an additional parameter ε (epsilon) to control the influence of the heuristic (f(n) = g(n) + h(n) + ε * h(n)). This modification can affect the search behavior and path quality.
+
+Performance:
+
+A*: A* is generally more computationally efficient compared to AO* when using a consistent and admissible heuristic. It efficiently explores the search space, prioritizing nodes that are likely to lead to the shortest path first.
+AO*: AO* can sometimes explore the search space more quickly due to the potential use of inadmissible heuristics. However, this speed advantage comes at the cost of potentially sacrificing the optimality of the solution.
+
+Applications:
+
+A*: A* is commonly used in applications where finding the optimal solution (shortest path) is crucial, such as pathfinding in games, robotics, and route planning.
+AO*: AO* is suitable for scenarios where finding a reasonably good solution quickly is more important than guaranteeing optimality. It can be applied in real-time planning, resource-constrained environments, and scenarios where an inadmissible heuristic may lead to acceptable solutions. 
